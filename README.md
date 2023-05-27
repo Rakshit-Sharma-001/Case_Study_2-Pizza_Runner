@@ -25,3 +25,5 @@ Data is formatted in <a href = https://github.com/Rakshit-Sharma-001/Case_Study_
 4. A new table 'temp_pizza_recipes' is created from  'pizza_recipes' to convert comma-separated rows into different values. Then the datatype of Topping_id is changed to Int for better usage. 
 
 At the end of both original and formatted SQL files, select statements are used to confirm whether are operations are doen correctly or not. 
+# __SQL-Queries__
+All Questions have been distributed into 4 sections, you can check them from here. Some code might be missing, as I am still working on them. Will update file once completed. Fell free to start any issue for any question ad suggestions. 
