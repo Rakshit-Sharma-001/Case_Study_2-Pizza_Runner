@@ -11,24 +11,23 @@ alter table temp_customer_orders add column record_id int Not null primary key a
 Create table temp_customer_orders_extras as
 select record_id, trim(substring_index(substring_index(extras, ',', n), ',', -1)) as extras
 from temp_customer_orders
-cross join ( select 1 as n union all 
-     select 2 union all select 3) as numbers
+cross join ( select 1 as n union all select 2 union all select 3) as numbers
 where n<=1 + length(extras)-length(replace(extras, ',', ''));
+
+update temp_customer_orders_extras set extras = 0 where extras = '';
+alter table temp_customer_orders_extras modify column extras int;
+update temp_customer_orders_extras set extras = NULL where extras = 0;
 
 Create table temp_customer_orders_exclusions as
 select record_id, trim( substring_index(substring_index(exclusions, ',',   n), ',', -1)) as exclusions
 from temp_customer_orders 
-cross join ( select 1 as n union all 
-             select 2 union all select 3) as numbers
+cross join ( select 1 as n union all select 2 union all select 3) as numbers
 where n<=1 + length(exclusions)-length(replace(exclusions, ',', ''));
 
-update temp_customer_orders_extras set extras = 0 where extras = '';
-
 update temp_customer_orders_exclusions set exclusions = 0 where exclusions = '';
-
-alter table temp_customer_orders_extras modify column extras int;
-
 alter table temp_customer_orders_exclusions modify column exclusions int;
+update temp_customer_orders_exclusions set exclusions = null where exclusions = 0;
+
 
 CREATE TABLE temp_runner_orders AS
 SELECT order_id, runner_id, 
