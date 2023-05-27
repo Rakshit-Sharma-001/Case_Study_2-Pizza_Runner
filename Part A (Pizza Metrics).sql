@@ -1,6 +1,6 @@
-***-- Part A : Pizza Metrics***
+__Part A : Pizza Metrics__
 
-**-- q1**
+-- q1
 
 select count(pizza_id) as Pizza_Order_Count from temp_customer_orders;
 
