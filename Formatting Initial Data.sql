@@ -28,7 +28,6 @@ update temp_customer_orders_exclusions set exclusions = 0 where exclusions = '';
 alter table temp_customer_orders_exclusions modify column exclusions int;
 update temp_customer_orders_exclusions set exclusions = null where exclusions = 0;
 
-
 CREATE TABLE temp_runner_orders AS
 SELECT order_id, runner_id, 
 	CASE WHEN pickup_time = 'null' THEN NULL ELSE pickup_time END AS pickup_time,
@@ -44,11 +43,8 @@ SELECT order_id, runner_id,
 FROM runner_orders;
 
 alter table temp_runner_orders modify pickup_time datetime;
-
 alter table temp_runner_orders modify distance float;
-
 alter table temp_runner_orders modify duration int;
-
 update temp_runner_orders set cancellation = ' ' where runner_id =1;
 
 create table temp_pizza_recipes as select pizza_id, substring_index(substring_index(toppings, ',',n), ',',-1) 
