@@ -1,3 +1,5 @@
+__ Part-B Runner and Customer Experience __ 
+
 -- Q1: How many runners signed up for each 1 week period? (i.e. week starts 2021-01-01)
 SELECT weekofyear(registration_date+3) as 'week', count(runner_id) as Runners_singed_up FROM pizza_runner.runners group by week ;
 
