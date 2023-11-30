@@ -6,7 +6,7 @@ Danny was sold on the idea, but he knew that pizza alone was not going to help h
 
 Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers.
  ## __Dataset__
- Original <a href =https://github.com/Rakshit-Sharma-001/Case_Study_2-Pizza_Runner/blob/main/Schema.sql >schema</a> for this case study. A;; data is inserted after creating original tables in this schema.
+ Original <a href =https://github.com/Rakshit-Sharma-001/Case_Study_2-Pizza_Runner/blob/main/Schema.sql >schema</a> for this case study. Data is inserted after creating original tables in this schema.
 
 - runners : The table shows the registration_date for each new runner
 - customer_orders : Customer pizza orders are captured in the customer_orders table with 1 row for each individual pizza that is part of the order. The pizza_id relates to the type of pizza which was ordered whilst the exclusions are the ingredient_id values which should be removed from the pizza and the extras are the ingredient_id values which need to be added to the pizza.
@@ -24,6 +24,6 @@ Data is formatted in <a href = https://github.com/Rakshit-Sharma-001/Case_Study_
 3. A new table is created 'temp_runner_orders' from original table 'runner_orders' to change null keyword to NULL in pickup_time, dstance, duration and cancellation columns. Also, in create statement, keywords like (km, min, minute, minutes) are removed from numbers. Then datatype of  different columns are changed using Alter Table statement to match their column values.
 4. A new table 'temp_pizza_recipes' is created from  'pizza_recipes' to convert comma-separated rows into different values. Then the datatype of Topping_id is changed to Int for better usage. 
 
-At the end of both original and formatted SQL files, select statements are used to confirm whether are operations are doen correctly or not. 
+At the end of both original and formatted SQL files, select statements are used to confirm whether are operations are done correctly or not. 
 # __SQL-Queries__
-All Questions have been distributed into 4 sections, you can check them from here. Some code might be missing, as I am still working on them. Will update file once completed. Fell free to start any issue for any question ad suggestions. 
+All Questions have been distributed into 5 sections [A to E]. Some code might be missing, as I am still working on them. Will update file once completed. Feel free to start any issue for any question ad suggestions. 
